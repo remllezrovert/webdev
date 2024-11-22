@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Store</title>
+    <style> 
+
+        header{
+            background-color:grey;
+        }
+        label{
+            margin-left:1%
+        } 
+        
+        p{
+            color:black
+        }
+
+
+        select{
+            padding-left: 40%;
+            padding-right: 40%;
+            width: 90%;
+        }
+
+        h4{
+            background-color:grey;
+            color:white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        h1{
+            text-align:center;
+        }
+
+        textarea{
+            width: 90%;
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+        h2{
+            text-align: center;   
+        }
+
+        form{
+            background-color:white;
+        }
+
+        div{
+            border-style:solid;
+            border-color: whitesmoke;
+            border-radius: 2px;
+            margin: 1%;
+            margin-top:0%;
+
+
+
+        }
+
+        .txtInput {
+            width: 90%;
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+
+
+            </style>
+</head>
+<body>
+    <h1>Digital Store</h1>
+    <hr style="height:20px;background-color:grey">
+    <form>
+        <h2>Online Order Form</h2>
+        <div>
+        <h4>Configure your system</h4>
+<label for="Operating System"> Operating System:</label>
+<br>
+    <select name="OS" id="OS" class = "txtInput">
+        <option value="Windows">Windows</option>
+        <option value="Linux">Linux</option>
+        <option value="Mac">Mac</option>
+        <option value="BSD">Mac</option>
+    </select>
+
+<br>
+
+
+    <label for="Processor"> Processor</label>
+    <br>
+    <select name="cpu" id="cpu" class="txtInput">
+        <option value="i5">i5</option>
+        <option value=i7">i7</option>
+        <option value="AMD">AMD</option>
+    </select>
+
+    <br>
+    <label>Memory</label>
+    <br>
+
+    <input type="radio" id = "128GB" name="memory"value="128GB">
+    <label for "128GB">128 GB</label>
+
+    <input type="radio" id = "64GB" name="memory" value="64GB">
+    <label for "64GB">64 GB</label>
+
+    <input type="radio" id = "32GB" name="memory" value="32GB">
+    <label for "32GB">32 GB</label>
+
+    <input type="radio" id = "16GB" name="memory" value="16GB">
+    <label for "16GB">16 GB</label>
+
+    <input type="radio" id = "8GB" name="memory" value="8GB">
+    <label for "8GB">8 GB</label>
+    <br>
+
+    <br>
+    <label>Accessories</label>
+    <br>
+
+    <input type="checkbox" id = "battery" value="Battery Backup">
+    <label for "battery">Battery Backup</label>
+
+    <input type="checkbox" id = "webcam" value="Webcam">
+    <label for "webcam">Webcam</label>
+
+
+    <input type="checkbox" id = "mouse" value="mouse">
+    <label for "mouse">Wireless Mouse</label>
+
+    <input type="checkbox" id = "headset" value="Headset">
+    <label for "headset">Headset</label>
+
+    <input type="checkbox" id = "clicker" value="clicker">
+    <label for "clicker">Presentation Clicker</label>
+
+
+</div>
+
+
+<div>
+
+
+    <h4>Contact Information</h4>
+    <label for="name">Name</label> <br>
+    <input type="text" style="width:90%"name="name" width="80%" placeholder = "Enter name here" class="txtInput"></input>
+    <br>
+    <label for="email">Email</label> <br>
+    <input type="text" style="width:90%" name="email" placeholder = "Enter email here" class="txtInput"></input>
+    <br>
+</div>
+
+
+<div>
+    <h4>Special Instructions/comments</h4>
+    <textarea name="comments" form="comments" style="height:60px"></textarea>
+</div>
+    
+<button style="background-color:blue; color:white; border-radius:10%;"; >Finalize sale</button>
+<button style="background-color:red; color:white; border-radius:10%;"; >Cancel</button>
+</form>
+</body>
+</html>

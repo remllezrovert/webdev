@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" src="/Form_Stylesheet.css">
+    <title>Online Order Form</title>
+    <style> /*add embedded style here*/
+        * {font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 0.3em; 
+          }
+        h1 {text-align: center; border-bottom: solid darkolivegreen 10px}
+        h2 {text-align: center;}
+        section {margin: 0.5em 0em; padding: 0px; border: solid darkolivegreen 2px}  
+        h3 { background-color: darkolivegreen; 
+            color: white;  
+            margin: 0px;
+            }
+        input[type="radio"]+label, input[type="checkbox"]+label {padding-left: 0;}
+        select, input[type='text'], input[type='email'] {margin: 0.5em 0em;}
+        #submit {background-color:blue; color: white}
+        #cancel {background-color: red; color: white}
+    </style>
+</head>
+<body>
+    <h1>Digital Store</h1>
+    <h2>Online Order Form</h2>
+    <form name="orderForm" id="orderForm" action="processOrder.php" method="post">
+    
+        <section id="configure">
+            <h3>Configure your system </h3>  
+            <label for="opSystem">Operating System</label>
+            <br>
+            <select name="opSystem" id="opSystem">
+                <option>--select operating system--</option>
+                <option>Windows</option>
+                <option>Linux</option>
+                <option>MacOS</option>
+            </select>
+            <br><br>
+            <label for="processor">Processor</label>
+            <br>
+            <select name="processor" id="processor">
+                <option value="0">Intel Core i5</option>
+                <option value="300">Intel Core i7</option>
+                <option value="400">AMD Ryzen</option>
+            </select>
+            <br><br>
+            <label for="memory">Memory</label>
+            <br>
+            <input type="radio" name="memory" id="m128" value="800"><label>128 GB</label>
+            <input type="radio" name="memory" id="m64" value="400"><label>64 GB</label>
+            <input type="radio" name="memory" id="m32" value="200"><label>32 GB</label>
+            <input type="radio" name="memory" id="m16" value="100"><label>16 GB</label>
+            <input type="radio" name="memory" id="m8" value="0" checked><label>8 GB</label>
+            <br><br>
+
+
+            <select name="hd" >
+                <option selected="selected" value="0">1TB</option>
+                <option value="44.99">2TB</option>
+                <option value="109.99">4TB</option>
+                <option value="229.99">8TB</option>
+                <option value="279.99">10TB</option>
+            </select>
+            <br><br>
+
+
+            <label for="accessories">Accessories</label>
+            <input type="checkbox" name="battery" value="69"><label>Battery backup</label>
+            <input type="checkbox" name="webcam" value="79"><label>Webcam</label>
+            <input type="checkbox" name="mouse" value= "49.99"><label>Wireless mouse</label>
+            <input type="checkbox" name="headset" value="69"><label>Headset</label>
+            <input type="checkbox" name="clicker" value="42.99"><label>Presentation clicker</label> 
+        </section>
+        <br>
+        <fieldset id="contact">
+            <legend>Contact Information</legend>
+            <label for="nameBox">Name</label>
+            <br>
+            <input type="text" placeholder="Enter Name" name='nameBox' id="nameBox" required>
+            <br>
+            <label for="emailBox">Email adress</label>
+            <br>
+            <input type="email" placeholder="Enter Email" name='emailBox' id="emailBox" required>
+        </fieldset>
+        <br>
+        <fieldset id="comments">
+            <legend>Special instructions/Comments</legend>
+            <textarea id="comBox" name='comBox' rows="4" cols="50"></textarea>
+        </fieldset>
+        <br><br>
+        <button id="submit" type="submit">Finalize Sale</button>
+        <button id="cancel" type="button" onclick="window.history.back();">Cancel</button>
+</form>
+
+</body>
+</html>

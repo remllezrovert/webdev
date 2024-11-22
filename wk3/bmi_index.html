@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">	
+    <title>BMI Calculation</title>
+    <link rel="stylesheet" href="bmi_style.css">
+</head>
+<body>
+	<main>
+		<h1>Body Mass Index Calculation Application</h1>
+		<!-- complete action attribute so that the form data will be sent to "display_bmi.php"-->
+		<form name="BMICalculator" action="display_bmi.php" type="get"> 
+		
+		<!-- two input boxes for height and weight with labels -->
+        <label for="heightInput">Enter your height in inches:</label>
+		<!-- add name attribute to provide a name to the input box-->
+		<input type='text' id='heightInput' name='height'><br>
+		
+		<label for="weightInput">Enter your weight in pounds:</label>
+		<!-- add name attribute to provide a name to the input box-->
+		<input type='text' id='weightInput' name="weight"><br>
+		
+		<!-- a calculate button with label -->
+		<label>&nbsp;</label>
+		<input type="submit" id="calculate" value="Calculate BMI" name="submit"> 
+		
+		</form>
+	</main>
+	 
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">	
+    <title>BMI Calculation</title>
+    <link rel="stylesheet" href="bmi.css">
+</head>
+<body>
+	<main>
+		<h1>Body Mass Index Calculation Application</h1>
+		<!-- two input boxes for height and weight with labels -->
+        <label for="heightInput">Enter your height in inches:</label>
+		<input type='text' id='heightInput' min='0' pattern="[0-9]+"><br>
+		<label for="weightInput">Enter your weight in pounds:</label>
+		<input type='text' id='weightInput'><br>
+		
+		<!-- a calculate button with label -->
+		<label>&nbsp;</label>
+		<input type="button" id="calculate" value="Calculate BMI" onclick="processEntries()"> 
+		
+        <!-- a <div> element for displaying BMI or error message -->
+		<div id="bmiOutput"></div>
+	</main>
+	 <script> 
+	    /* Add JS code in the following function to get user inputs, validate inputs, 
+		calculate BMI and display BMI or error message. Pay attention to the logical flow 
+		and a few details in the implementation as we discussed in class*/
+	    const processEntries = function() {	
+
+			weightInput = document.getElementById('weightInput')
+			weight = document.getElementById('weightInput').value
+
+			heightInput = document.getElementById('heightInput')
+			height = document.getElementById('heightInput').value
+			bmi = (weight * 703 ) / (height ** 2)
+
+			if (isNaN(height) || height <= 0) {
+					heightInput.classList.add("error"); 
+				} else {
+					heightInput.classList.remove("error");
+				}
+			if (isNaN(weight) || weight <= 0) {
+					weightInput.classList.add("error"); 
+				} else {
+					weightInput.classList.remove("error");
+				}
+
+
+			if (isNaN(height) || isNaN(weight)){
+				document.getElementById("bmiOutput").innerHTML="Invalid input"
+			} else if (height < 0 || weight < 0){
+				document.getElementById("bmiOutput").innerHTML="Cannot have negative height or weight"
+			} else {
+				document.getElementById("bmiOutput").innerHTML="Your BMI is: " + bmi.toFixed(1)
+       }
+
+	}
+	   
+    </script>
+</body>
+</html>

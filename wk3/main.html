@@ -1,0 +1,48 @@
+<!DOCTYPE html>  <!-- header to indicate this document is written by HTML5 -->
+<html lang="en-US"> 
+  <head>
+
+  	<meta charset="utf-8"> <!-- required element in HTML5 -->
+	<title>Birthday Card</title>
+
+	<link rel="stylesheet" href="./CSS/style.css">   <!-- link to external css file -->
+	<script src="./JS/script1.js" defer></script> 		  <!-- link to external js file -->
+
+  </head>
+
+  <body>
+  
+    <div id="outside">
+      <p id="outside-title">Happy Birthday!</p>
+      <img id="outside-pic" src="./img/minion.webp" alt="minion img">  <!-- replace img here -->
+      <p><button onclick="opencard()">Click to open</button></p> 
+    </div>
+  
+    <div id="inside" class="gradient">
+      <p id="inside-title"> Happy Birthday! </p>
+      <p id="message">
+        Kaitlyn with a T! <!-- modify the text content here to add specific birthday message -->
+      </p>
+	  <img id="inside-pic" src="./img/Leslie_Mackerel.webp" alt="les img"> <!-- replace img here -->
+	  
+	  <!-- add <form> element here before the <p> element below -->
+
+
+      <form action="reply.html"
+        <label for = "wishinput">Enter your birthday wish:</label>
+        <input type="text" id="wishinput" name="wishinput">
+        <input type="submit" value= "submit">
+    </form>
+	  
+      
+      <p>
+        <a href="https://www.youtube.com/watch?v=T2IrtX0QdIE">Very Important Video </a>
+        <br>
+        <button onclick="closecard()">Click to close</button>
+      </p>
+      
+    </div>
+    
+  </body>
+  
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Online Converter</title>
+ 
+	<style>
+		@import url(http://fonts.googleapis.com/css?family=Oswald);
+	   
+		body {
+		  font-family: 'Oswald', 'Futura', sans-serif;
+		  margin: 0; 
+		  padding: 0;
+		  background-color: #FFF; 
+		  width: 700px; 
+		  margin: 0 auto 0 auto;
+		}
+
+		#messageForm *{height: 3em; font-size: 120%}
+		input {display: block; padding-left: 1em;}
+		div {float: left; }
+		label {padding: 0.5em;}	
+	</style>
+  </head>
+  <body>
+    <section id="page">
+	  <h2>Online Converter </h2>
+      <form id="messageForm">
+		<select id="category"> 
+			<option value="T">temperature</option>
+			<option value="L">length</option>
+			<option value="W">weight</option>
+		</select><br>
+		<div>
+			<input type="text" id="leftInput">
+			<label for="leftInput">Fahrenheit</label>
+		</div>
+		<div>
+			<input type="button" value="=">
+		</div>	
+		<div>
+			<input type="text" id="rightInput">
+			<label for="rightInput">Celsius</label>
+		</div>	
+      </form>
+    </section>
+	<script>
+	
+	const leftInputBox = document.getElementById('leftInput');
+	const rightInputBox = document.getElementById('rightInput');
+	
+	//define changeLabel function
+    const changeLabel = function(e){
+		
+		let option = e.target.value;
+		let leftLabel="", rightLabel="";
+		
+		switch(option){
+		   case "T": //select temperature
+			leftLabel = "Fahrenheit";  rightLabel = "Celsius";break;
+			
+		   case "L": //select length
+			leftLabel = "Foot"; rightLabel = "Meter"; break;
+	
+		   case "W":// select weight
+			leftLabel = "Pound"; rightLabel = "Kilogram"; break;
+			 
+		}
+	
+//(1)add js code to change label on web page
+}
+
+//(2) add js code to change the label under input box when user changes the dropdown list selection
+      //add event listener to the "change" event to the element with id='category'
+
+	
+	
+    //define convert temperature function
+	var convertT = function(temp, id){ //use input box id to identify the direction of conversion
+		if(id == "leftInput") //convert F to C
+		{
+			let Celsius = (5/9) *(temp-32);
+			return Celsius;
+		}
+		else //convert C to F
+		{
+			let Fahrenheit = (9/5)*temp + 32;
+			return Fahrenheit;
+		}
+	};
+	   
+	//define convert length function
+	var convertL = function(length, id){
+		if(id == "leftInput") // convert Foot to Meter
+		{
+			let Meter = 0.3048*length;
+			return Meter;
+		}
+		else // convert Meter to Foot
+		{
+			let Foot = 3.28084*length;
+			return Foot;
+		}
+	};
+	
+	//define convert weight function
+	var convertW = function(weight, label){ //use label to identify the direction of conversion
+		if(label == "Pound")  //convert "Pound" to "Kilogram"
+		{
+			let  Kilogram = 0.453592*weight;
+			return Kilogram;
+		}
+		else //convert "Kilogram" to "Pound"
+		{
+			let Pound = 2.20462*weight;
+			return Pound;
+		}
+	};
+	
+	//define a conversion function to handle conversion for all kinds of inputs
+	var conversion = function(e, category) { //category is the value of selected option: "T", "L", "W"
+		
+		let output = "";
+		let inputBox = e.target;  
+		let input = inputBox.value;
+		input = parseFloat(input);
+
+	
+		if (!isNaN(input) && input >=0 )
+		{	
+			switch (category){ 
+         case "T":				   
+			      output = convertT(input, inputBox.id).toFixed(5); break;
+			   case "L":
+				  output = convertL(input, inputBox.id).toFixed(5); break;
+			   case "W":
+			      output = convertW(input, inputBox.nextElementSibling.textContent).toFixed(5); break;
+			}
+
+//(3) display output in the web page 				
+			if (inputBox.id == "leftInput")
+				document.getElementById('rightInput').value = output;
+			else
+				document.getElementById('leftInput').value = output;		
+		}
+	};
+	
+//(4) add js code to add event listener to "input" event convert input and display result on web page 
+
+leftInputBox.addEventListener('input', function(e) {
+    conversion(e, categorySelect.value);
+});
+
+rightInputBox.addEventListener('input', function(e) {
+    conversion(e, categorySelect.value);
+});	
+//(5) Define a reset function (use event object in the function) that reset the value of input boxes
+	
+	
+//(6) add js code to add event listener to the left input box so that
+// when it gets focused, remove previous displayed value in that box (by using reset function as event handler)
+
+//(7) add js code to add event listener to the right input box so that
+// when it gets focused, remove previous displayed value in that box (by using reset function as event handler) 
+
+
+	
+	</script> 
+  </body>
+</html>
