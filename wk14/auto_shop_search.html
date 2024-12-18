@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Used Cars</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include jQuery UI CSS -->
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+
+    <!-- Include jQuery UI JavaScript -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <style> 
+        td { padding: 5px; margin: 5px;}
+        .add-item { height: 28px; width: 80px; padding: 0; }
+        .clm-label { background: #333; color: #fff;}
+        .hide { display: none; }
+    </style>
+</head>
+<body class='container'>
+<div class='row'>
+    <div class='col-md-9'>
+        <h2>Car List</h2>
+        <table class='table table-bordered' id='car-list'>
+            <thead>
+                <tr class='clm-label'>
+                    <th class='clm-label'>Stock ID</th>
+                    <th class='clm-label'>Make</th>
+                    <th class='clm-label'>Model</th>
+                    <th class='clm-label'>Year</th>
+                    <th class='clm-label'>Type</th>
+                    <th class='clm-label'>Color</th>
+                    <th class='clm-label'>Price</th>
+                    <th class='clm-label'>Mileage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class='car-item' id='l-0'>
+                    <td id='id-0'>1001</td>
+                    <td id='make-0'>Toyota</td>
+                    <td id='model-0'>Camry</td>
+                    <td id='year-0'>2011</td>
+                    <td id='type-0'>Sedan</td>
+                    <td id='color-0'>Gray</td>
+                    <td id='price-0'>$17555</td>
+                    <td id='mileage-0'>35000</td>
+                </tr>
+                <tr class='car-item' id='l-1'>
+                    <td id='id-1'>1002</td>
+                    <td id='make-1'>Honda</td>
+                    <td id='model-1'>Accord</td>
+                    <td id='year-1'>2013</td>
+                    <td id='type-1'>Sedan</td>
+                    <td id='color-1'>Black</td>
+                    <td id='price-1'>$18999</td>
+                    <td id='mileage-1'>42000</td>
+                </tr>
+                <!-- Add more rows here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class='col-md-3'>
+        <h3>Search Cars</h3>
+        <input type="text" id="searchbar" class="form-control" placeholder="Enter search keyword">
+        <br>
+        <select id="categorySelect" class="form-control">
+            <option value="make">Search by Make</option>
+            <option value="stockid">Search by Stock ID</option>
+            <option value="model">Search by Model</option>
+            <option value="year">Search by Year</option>
+            <option value="type">Search by Type</option>
+            <option value="color">Search by Color</option>
+            <option value="price">Search by Max Price</option>
+        </select>
+        <br>
+        <button id="p2" class="btn btn-primary">Search</button>
+
+        <div id="message" style="margin-top: 10px;"></div>
+
+        <table id="search-result" class="table table-bordered" style="margin-top: 20px;">
+            <thead>
+                <tr class="clm-label">
+                    <th>Stock ID</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Type</th>
+                    <th>Color</th>
+                    <th>Price</th>
+                    <th>Mileage</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <h3>Book a Time to Visit</h3>
+        <label for="visitdate">Select Visit Date</label>
+        <input type="text" id="visitdate" class="form-control" placeholder="Select a date">
+        <br>
+        <button id="bookVisitBtn" class="btn btn-success">Book Visit</button>
+        <div id="visitMessage" style="margin-top: 10px;"></div>
+    </div>
+</div>
+
+<script src="auto_shop_search.js"></script>
+
+</body>
+</html>
